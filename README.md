@@ -1,6 +1,6 @@
-![image](teaser.png)
 ## ContentAwareImageRecoloring
  The source code of the paper “Palette-based Content-Aware Image Recoloring”
+ ![image](teaser.png)
 
 ## Requirements
 1. OS: Windows 10
