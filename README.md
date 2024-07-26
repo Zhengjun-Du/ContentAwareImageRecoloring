@@ -16,3 +16,8 @@
 5. Modify the palette colors to recolor the input images
 
 # Semantic features extraction
+1. We follow Yagiz Aksoy's code to extract the semantic features, please refer to [https://github.com/iyah4888/SIGGRAPH18SSS](https://github.com/iyah4888/SIGGRAPH18SSS) and replace the main_hyper.py with SemanticExtractor.py
+2. Run SemanticExtractor.py to extract the semantic feature of an input image (could run with CPU)
+
+# Contact info
+dzj@qhu.edu.cn
