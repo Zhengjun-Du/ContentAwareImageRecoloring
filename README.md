@@ -20,4 +20,4 @@
 2. Run SemanticExtractor.py to extract the semantic feature of an input image (could run with CPU)
 
 # Contact info
-dzj@qhu.edu.cn
+Email Addr.: dzj@qhu.edu.cn
