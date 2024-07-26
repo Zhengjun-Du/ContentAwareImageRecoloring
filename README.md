@@ -1,4 +1,4 @@
-## ContentAwareImageRecoloring
+## Content Aware Platte-based Image Recoloring
  The source code of the paper “Palette-based Content-Aware Image Recoloring”
  ![image](teaser.png)
 
