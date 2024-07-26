@@ -21,5 +21,5 @@
 2. Run **SemanticExtractor.py** to extract the semantic feature of an input image (could run with CPU)
 
 ## Contact info
-Email Addr.: dzj@qhu.edu.cn
-Paper: [https://zhengjun-du.github.io/papers/202312/content-aware%20recolor.pdf](https://zhengjun-du.github.io/papers/202312/content-aware%20recolor.pdf)
+- Email Addr.: dzj@qhu.edu.cn
+- Paper: [https://zhengjun-du.github.io/papers/202312/content-aware%20recolor.pdf](https://zhengjun-du.github.io/papers/202312/content-aware%20recolor.pdf)
