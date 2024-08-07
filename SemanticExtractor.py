@@ -20,6 +20,7 @@ from glob import glob
 import tensorflow as tf
 import numpy as np
 import pdb
+import cv2
 
 from parse_opt import get_arguments
 from deeplab_resnet import HyperColumn_Deeplabv2, read_data_list
@@ -37,7 +38,7 @@ Helper functions
 
 def load_dir_structs(dataset_path):
 	# Get list of subdirs
-# 	types = ('*.jpg', '*.png')	# jpg is not supported yet by read_img()
+    # types = ('*.jpg', '*.png')	# jpg is not supported yet by read_img()
 	types = ('*.jpg',)
 	
 	curflist= []
@@ -66,7 +67,7 @@ def read_img(t_imgfname, input_size, img_mean): # optional pre-processing argume
 
 	img_contents = tf.read_file(t_imgfname)
 	
-# 	img = tf.image.decode_image(img_contents, channels=3)
+	#img = tf.image.decode_image(img_contents, channels=3)
 	img = tf.image.decode_png(img_contents, channels=3)
 	img_r, img_g, img_b = tf.split(axis=2, num_or_size_splits=3, value=img)
 	img = tf.cast(tf.concat(axis=2, values=[img_b, img_g, img_r]), dtype=tf.float32)
@@ -84,6 +85,22 @@ def read_img(t_imgfname, input_size, img_mean): # optional pre-processing argume
 		
 	return img2, img
 
+
+def SaveFeatures(h,w,data,path=''):
+    data = data[:,:3]
+    col_min = np.min(data, axis=0)
+    col_max = np.max(data, axis=0)
+
+    image = np.zeros((h*w,3))
+    image[:,0] = (data[:,0] - col_min[0]) / (col_max[0]-col_min[0])
+    image[:,1] = (data[:,1] - col_min[1]) / (col_max[1]-col_min[1])
+    image[:,2] = (data[:,2] - col_min[2]) / (col_max[0]-col_min[2])
+    image = image.reshape(h,w,3)*255
+
+    #cv2.imshow("feature_image", image)
+    #cv2.waitKey(0)
+
+    cv2.imwrite(path,image)
 
 
 #######################################################
@@ -155,7 +172,7 @@ if __name__ == "__main__":
 	args = get_arguments()
 
 	data_dir = "./image2/"
-	imgNames = ["blue.jpg"]
+	imgNames = ["ball.jpg"]
 
 	# Set up tf session and initialize variables.
 	config = tf.ConfigProto()
