@@ -17,7 +17,7 @@
 5. Modify the bellow palette colors to recolor the input images
 
 ## Semantic features extraction
-1. We follow Yagiz Aksoy's code to extract the semantic features, please refer to [My Tencent Cloud Storage]([https://github.com/iyah4888/SIGGRAPH18SSS](https://share.weiyun.com/OXeqcvHW)) and place it into the **SemanticFeatureExtract** folder and unzip it.
+1. We follow Yagiz Aksoy's code to extract the semantic features, please refer to [My Tencent Cloud Storage](https://share.weiyun.com/OXeqcvHW) and place it into the **SemanticFeatureExtract** folder and unzip it.
 2. Run **SemanticExtractor.py** to extract the semantic feature of an input image (could run with CPU)
 
 ## Contact info
